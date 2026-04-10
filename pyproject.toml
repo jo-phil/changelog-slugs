@@ -1,0 +1,59 @@
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
+
+[project]
+name = "changelog-slugs"
+version = "0.1.0"
+description = "Changelog-aware heading slugs for Python-Markdown’s toc extension"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Johann Philipp Gorzny" }
+]
+
+requires-python = ">=3.11"
+dependencies = [
+    "markdown>=3.10.2",
+]
+
+keywords = ["changelog", "keep-a-changelog", "markdown", "anchors", "slugify"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Documentation",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+
+[project.urls]
+Homepage = "https://github.com/jo-phil/changelog-slugs"
+Issues = "https://github.com/jo-phil/changelog-slugs/issues"
+Changelog = "https://github.com/jo-phil/changelog-slugs/blob/main/CHANGELOG.md"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.10",
+]
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "COM812",   # missing-trailing-comma, handled by formatter
+    "E501",     # line-too-long, handled by formatter
+
+    # irrelevant
+    "AIR", "ASYNC", "DJ", "FAST", "NPY", "PD", "PYI",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

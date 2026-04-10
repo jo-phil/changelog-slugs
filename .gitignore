@@ -1,0 +1,12 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+dist/
+
+# Virtual environment
+.venv/
+
+# Environment reproducibility
+#   A library is intended to run in multiple environments.
+.python-version
+uv.lock
