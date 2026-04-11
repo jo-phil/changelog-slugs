@@ -1,7 +1,7 @@
 import pytest
 from markdown.extensions.toc import slugify as default_slugify
 
-from changelog_slugs import ChangelogSlugifier
+from changelog_slugs import Slugifier
 
 # Valid and invalid SemVer versions from https://regex101.com/r/vkijKf/1/
 # without invalid `1.0.0-alpha_beta`, as trailing text (`_beta`) is allowed
@@ -27,7 +27,7 @@ SUFFIXES = [
 
 @pytest.fixture
 def slugify():
-    return ChangelogSlugifier()
+    return Slugifier()
 
 
 @pytest.mark.parametrize("suffix", SUFFIXES)

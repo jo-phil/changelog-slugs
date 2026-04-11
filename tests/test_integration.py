@@ -2,7 +2,7 @@ import re
 
 import markdown
 
-from changelog_slugs import ChangelogSlugifier
+from changelog_slugs import Slugifier
 
 CHANGELOG = """
 # Changelog
@@ -52,7 +52,7 @@ def test_markdown_toc_integration():
     html = markdown.markdown(
         CHANGELOG,
         extensions=["toc"],
-        extension_configs={"toc": {"slugify": ChangelogSlugifier()}},
+        extension_configs={"toc": {"slugify": Slugifier()}},
     )
 
     for line, expected in zip(html.splitlines(), EXPECTED_SLUGS, strict=True):
