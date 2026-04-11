@@ -7,4 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `ChangelogSlugifier` for changelog-aware heading slugs.
+
 [Unreleased]: https://github.com/jo-phil/changelog-slugs/tree/HEAD
