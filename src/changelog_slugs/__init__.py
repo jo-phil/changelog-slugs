@@ -1,6 +1,6 @@
 """Changelog-aware heading slugs for Python-Markdown."""
 
-__all__ = ["ChangelogSlugifier", "slugify"]
+__all__ = ["Slugifier", "slugify"]
 
 import re
 
@@ -28,7 +28,7 @@ _CHANGE_GROUPS = {
 }
 
 
-class ChangelogSlugifier:
+class Slugifier:
     """Slugifier for changelog headings with release-scoped change groups.
 
     It recognizes release headings that begin with a version following
@@ -72,4 +72,4 @@ class ChangelogSlugifier:
         return slug
 
 
-slugify = ChangelogSlugifier()
+slugify = Slugifier()
