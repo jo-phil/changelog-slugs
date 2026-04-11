@@ -15,7 +15,7 @@ authors = [
 
 requires-python = ">=3.11"
 dependencies = [
-    "markdown>=3.10.2",
+    "markdown>=3.4.2",
 ]
 
 keywords = ["changelog", "keep-a-changelog", "markdown", "anchors", "slugify"]
