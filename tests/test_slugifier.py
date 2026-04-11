@@ -57,3 +57,35 @@ def test_invalid_release_heading(slugify):
     slug = slugify(text)
     assert slug == default_slugify(text, separator="-")
     assert slugify.release_slug is None
+
+
+def test_stateful_release_context(slugify):
+    # Before the first release heading, change groups are not prefixed.
+    assert slugify("Added") == "added"
+    assert slugify.release_slug is None
+
+    # A release heading sets the release context.
+    assert slugify("1.0.0") == "v1-0-0"
+    assert slugify.release_slug == "v1-0-0"
+
+    # Matching change groups are prefixed with the current release slug.
+    assert slugify("Added") == "v1-0-0-added"
+    assert slugify("Changed") == "v1-0-0-changed"
+    assert slugify.release_slug == "v1-0-0"
+
+    # A non-matching heading resets the release context.
+    assert slugify("Notes") == "notes"
+    assert slugify.release_slug is None
+
+    # After reset, change groups are no longer prefixed.
+    assert slugify("Added") == "added"
+    assert slugify.release_slug is None
+
+    # A new release heading starts a new release context.
+    assert slugify("0.1.0") == "v0-1-0"
+    assert slugify.release_slug == "v0-1-0"
+
+    # Matching change groups are now prefixed with the new release slug.
+    assert slugify("Added") == "v0-1-0-added"
+    assert slugify("Fixed") == "v0-1-0-fixed"
+    assert slugify.release_slug == "v0-1-0"
