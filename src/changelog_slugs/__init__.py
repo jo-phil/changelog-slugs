@@ -59,7 +59,7 @@ class Slugifier:
         text = value.strip()
 
         match = _RELEASE_PATTERN.match(text)
-        if match and (version := match.group("version")) is not None:
+        if match and (version := match.group("version")):
             version_slug = re.sub(r"[.+]", separator, version.lower())
             self.release_slug = f"v{version_slug}"
             return self.release_slug
