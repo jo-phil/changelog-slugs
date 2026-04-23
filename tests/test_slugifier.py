@@ -105,3 +105,13 @@ def test_custom_sections():
     # Default change groups are not prefixed and reset the release context.
     assert slugify("Added") == "added"
     assert slugify.release_slug is None
+
+
+def test_additional_sections():
+    slugify = Slugifier(extend_sections=["Contributors"])
+    assert slugify("1.0.0") == "v1-0-0"
+
+    # Default and additional sections are prefixed.
+    assert slugify("Added") == "v1-0-0-added"
+    assert slugify("Contributors") == "v1-0-0-contributors"
+    assert slugify.release_slug == "v1-0-0"

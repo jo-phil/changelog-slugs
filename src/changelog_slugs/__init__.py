@@ -45,7 +45,12 @@ class Slugifier:
     encountered. The default sections are based on Keep a Changelog.
     """
 
-    def __init__(self, sections: Collection[str] = DEFAULT_SECTIONS) -> None:
+    def __init__(
+        self,
+        *,
+        sections: Collection[str] = DEFAULT_SECTIONS,
+        extend_sections: Collection[str] = (),
+    ) -> None:
         """Initialize the slugifier.
 
         Parameters:
@@ -53,10 +58,16 @@ class Slugifier:
                 Set this when your changelog uses headings such as
                 `Enhancements` or `Bug fixes` instead of the default
                 Keep a Changelog change types.
+            extend_sections: Additional sections to recognize.
+                Use this when your changelog includes headings such as
+                `Notes` or `Contributors` in addition to the default
+                Keep a Changelog change types.
         """
         self.release_slug: str | None = None
 
-        self.sections = frozenset(section.lower() for section in sections)
+        self.sections = frozenset(
+            section.lower() for section in (*sections, *extend_sections)
+        )
 
     def __call__(self, value: str, separator: str = "-") -> str:
         """Slugify a heading.

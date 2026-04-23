@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `DEFAULT_SECTIONS` containing the default Keep a Changelog sections.
 - `sections` option to recognize custom sections after release headings.
+- `extend_sections` option for additional sections alongside the default ones.
 
 ## [0.1.0] - 2026-04-11
 
