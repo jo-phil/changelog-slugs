@@ -39,8 +39,11 @@ Changelog = "https://github.com/jo-phil/changelog-slugs/blob/main/CHANGELOG.md"
 
 [dependency-groups]
 dev = [
+    "beautifulsoup4>=4.14.3",
+    "mkdocs>=1.4.2",
     "pytest>=9.0.3",
     "ruff>=0.15.10",
+    "zensical>=0.0.12",
 ]
 
 [tool.ruff]

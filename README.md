@@ -51,7 +51,7 @@ html = markdown.markdown(
 object = "changelog_slugs.Slugifier"
 ```
 
-**mkdocs.yml** _(untested)_
+**mkdocs.yml**
 
 ```yaml
 markdown_extensions:
