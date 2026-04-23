@@ -89,3 +89,19 @@ def test_stateful_release_context(slugify):
     assert slugify("Added") == "v0-1-0-added"
     assert slugify("Fixed") == "v0-1-0-fixed"
     assert slugify.release_slug == "v0-1-0"
+
+
+def test_custom_sections():
+    # Use groups of varying casing to test case insensitivity.
+    slugify = Slugifier(sections=["enhancements", "Bug Fixes"])
+
+    assert slugify("1.0.0") == "v1-0-0"
+
+    # Custom change groups are prefixed with the current release slug.
+    assert slugify("Enhancements") == "v1-0-0-enhancements"
+    assert slugify("Bug fixes") == "v1-0-0-bug-fixes"
+    assert slugify.release_slug == "v1-0-0"
+
+    # Default change groups are not prefixed and reset the release context.
+    assert slugify("Added") == "added"
+    assert slugify.release_slug is None
