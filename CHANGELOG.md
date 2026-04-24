@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `sections` option to recognize custom sections after release headings.
 - `extend_sections` option for additional sections alongside the default ones.
 
+[//]: # (--8<-- [start:released])
+
 ## [0.1.0] - 2026-04-11
 
 ### Added

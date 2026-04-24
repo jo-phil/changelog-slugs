@@ -10,3 +10,6 @@ dist/
 #   A library is intended to run in multiple environments.
 .python-version
 uv.lock
+
+# Documentation
+site/

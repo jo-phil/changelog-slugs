@@ -4,6 +4,8 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/changelog-slugs)](https://pypi.org/project/changelog-slugs/ "View latest release on PyPI")
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/changelog-slugs)](https://pypi.org/project/changelog-slugs/ "View supported Python versions on PyPI")
 
+[//]: # (--8<-- [start:opener])
+
 `changelog-slugs` provides changelog-aware heading slugs for
 [Python-Markdown](https://python-markdown.github.io/)’s
 [`toc` extension](https://python-markdown.github.io/extensions/toc/).
@@ -15,6 +17,8 @@ receive unstable, order-dependent anchors. As new releases are added above
 older ones, those anchors can change, causing existing permalinks to become
 obsolete. `changelog-slugs` instead scopes subsection slugs to their
 containing release, producing stable anchors such as `v1-2-3-fixed`.
+
+[//]: # (--8<-- [end:opener])
 
 ## Installation
 
