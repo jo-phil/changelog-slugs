@@ -3,6 +3,7 @@
 [![CI](https://github.com/jo-phil/changelog-slugs/actions/workflows/ci.yml/badge.svg)](https://github.com/jo-phil/changelog-slugs/actions/workflows/ci.yml "View workflow runs")
 [![PyPI - Version](https://img.shields.io/pypi/v/changelog-slugs)](https://pypi.org/project/changelog-slugs/ "View latest release on PyPI")
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/changelog-slugs)](https://pypi.org/project/changelog-slugs/ "View supported Python versions on PyPI")
+[![Docs](https://github.com/jo-phil/changelog-slugs/actions/workflows/docs.yml/badge.svg)](https://jo-phil.github.io/changelog-slugs/ "Read the documentation")
 
 [//]: # (--8<-- [start:opener])
 
