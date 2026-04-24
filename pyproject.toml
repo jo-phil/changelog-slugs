@@ -33,7 +33,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/jo-phil/changelog-slugs"
+Homepage = "https://jo-phil.github.io/changelog-slugs/"
+Repository = "https://github.com/jo-phil/changelog-slugs"
 Issues = "https://github.com/jo-phil/changelog-slugs/issues"
 Changelog = "https://github.com/jo-phil/changelog-slugs/blob/main/CHANGELOG.md"
 
