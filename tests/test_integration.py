@@ -1,8 +1,10 @@
+import subprocess
+import sysconfig
 from contextlib import chdir
+from pathlib import Path
 
 import markdown
 import pytest
-import zensical
 from bs4 import BeautifulSoup
 from mkdocs.commands.build import build
 from mkdocs.config import load_config
@@ -110,8 +112,9 @@ def test_mkdocs_integration(project_dir):
 def test_zensical_integration(project_dir):
     (project_dir / "zensical.toml").write_text(ZENSICAL_CONFIG)
 
+    zensical_bin = Path(sysconfig.get_path("scripts")) / "zensical"
     with chdir(project_dir):
-        zensical.build("zensical.toml", clean=True)
+        subprocess.run([zensical_bin, "build"], check=True)  # noqa: S603
 
     html = (project_dir / "site" / "index.html").read_text()
     soup = BeautifulSoup(html, "html.parser")
