@@ -52,8 +52,9 @@ jobs:
           cache-suffix: ${{ matrix.resolution }}
           python-version: ${{ matrix.python-version }}
 
-      - name: Install dependencies
-        run: uv sync --resolution ${{ matrix.resolution }}
-
       - name: Run tests
-        run: uv run --no-sync pytest
+        run: |
+          uv run \
+            --with-requirements tests/requirements.txt \
+            --resolution ${{ matrix.resolution }} \
+            pytest
