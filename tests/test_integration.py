@@ -6,6 +6,8 @@ from pathlib import Path
 import markdown
 import pytest
 from bs4 import BeautifulSoup
+from mkdocs.commands.build import build
+from mkdocs.config import load_config
 
 from changelog_slugs import Slugifier
 
@@ -96,11 +98,8 @@ def test_markdown_toc_integration():
 
 
 def test_mkdocs_integration(project_dir):
-    pytest.importorskip("mkdocs", reason="MkDocs is not installed.")
-    from mkdocs.commands.build import build  # noqa: PLC0415
-    from mkdocs.config import load_config  # noqa: PLC0415
-
     (project_dir / "mkdocs.yml").write_text(MKDOCS_CONFIG)
+
     with chdir(project_dir):
         build(load_config())
 
@@ -111,10 +110,9 @@ def test_mkdocs_integration(project_dir):
 
 
 def test_zensical_integration(project_dir):
-    pytest.importorskip("zensical", reason="Zensical is not installed.")
-    zensical_bin = Path(sysconfig.get_path("scripts")) / "zensical"
-
     (project_dir / "zensical.toml").write_text(ZENSICAL_CONFIG)
+
+    zensical_bin = Path(sysconfig.get_path("scripts")) / "zensical"
     with chdir(project_dir):
         subprocess.run([zensical_bin, "build"], check=True)  # noqa: S603
 
