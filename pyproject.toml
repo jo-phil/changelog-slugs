@@ -40,15 +40,21 @@ Changelog = "https://jo-phil.github.io/changelog-slugs/changelog/"
 
 [dependency-groups]
 dev = [
-    "beautifulsoup4>=4.14.3",
+    "ruff==0.15.10",
+    { include-group = "test" },
+]
+test = [
+    "beautifulsoup4==4.14.3",
+    "pytest==9.0.3",
+    { include-group = "integration" },
+]
+integration = [
     "mkdocs>=1.4.2",
-    "pytest>=9.0.3",
-    "ruff>=0.15.10",
     "zensical>=0.0.12",
 ]
 docs = [
-    "mkdocstrings-python>=2.0.3",
-    "zensical>=0.0.36",
+    "mkdocstrings-python==2.0.3",
+    "zensical==0.0.36",
 ]
 
 [tool.ruff]
