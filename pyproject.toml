@@ -64,6 +64,7 @@ line-length = 79
 select = ["ALL"]
 ignore = [
     "COM812",   # missing-trailing-comma, handled by formatter
+    "CPY001",   # missing-copyright-notice
     "E501",     # line-too-long, handled by formatter
 
     # irrelevant
