@@ -40,7 +40,7 @@ Changelog = "https://jo-phil.github.io/changelog-slugs/changelog/"
 
 [dependency-groups]
 dev = [
-    "ruff==0.15.21",
+    "ruff==0.16.0",
     { include-group = "test" },
 ]
 test = [
@@ -54,7 +54,7 @@ integration = [
 ]
 docs = [
     "mkdocstrings-python==2.0.5",
-    "zensical==0.0.50",
+    "zensical==0.0.51",
 ]
 
 [tool.ruff]
@@ -64,6 +64,7 @@ line-length = 79
 select = ["ALL"]
 ignore = [
     "COM812",   # missing-trailing-comma, handled by formatter
+    "CPY001",   # missing-copyright-notice
     "E501",     # line-too-long, handled by formatter
 
     # irrelevant
